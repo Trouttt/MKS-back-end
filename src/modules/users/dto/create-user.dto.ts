@@ -5,11 +5,14 @@ import {
   Matches,
   MinLength,
 } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 export class CreateUserDto {
+  @ApiProperty()
   @MinLength(3)
   @IsString()
   username: string;
-  ///(?=.*\d)(?=.*[A - Z])/
+
+  @ApiProperty()
   @MinLength(8)
   @IsString()
   @Matches(/[A-Z]/, {

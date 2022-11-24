@@ -2,15 +2,11 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class User {
+export class Movie {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @ApiProperty()
-  @Column({ unique: true })
-  username: string;
-
-  @ApiProperty()
   @Column()
-  password: string;
+  name: string;
 }
